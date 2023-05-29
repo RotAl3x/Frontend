@@ -60,15 +60,16 @@ export class ScheduleDialogComponent {
     this.isSecretary=await this.authService.hasRole('Secretary');
     this.isProfessor=await this.authService.hasRole('Professor');
     if(this.isSecretary) {
-      combineLatest([
-        this.authService.getUsersByRole('Professor'),
-        this.authService.getUsersByRole('LabAssistant'),
-      ]).pipe(filter((r) => !!r[0] && !!r[1]))
-        .subscribe(([professorUsers, labAssistantUsers]) => {
-            this.users = professorUsers;
-            this.users = this.users.concat(labAssistantUsers);
-          }
-        )
+      this.users=await this.authService.getUsersByRole('LabAssistant')
+      // combineLatest([
+      //   this.authService.getUsersByRole('Professor'),
+      //   this.authService.getUsersByRole('LabAssistant'),
+      // ]).pipe(filter((r) => !!r[0] && !!r[1]))
+      //   .subscribe(([professorUsers, labAssistantUsers]) => {
+      //       this.users = professorUsers;
+      //       this.users = this.users.concat(labAssistantUsers);
+      //     }
+      //   )
     }
     else {
       let professorSession= await this.authService.getSession();
