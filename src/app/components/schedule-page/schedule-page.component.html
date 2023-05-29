@@ -35,9 +35,10 @@
         <mat-card-subtitle>Saptamanile:{{schedule.studyWeeks}}</mat-card-subtitle>
         <mat-card-subtitle>Start:{{schedule.startTime}}</mat-card-subtitle>
         <mat-card-subtitle>End:{{schedule.endTime}}</mat-card-subtitle>
+        <mat-card-subtitle>Sala:{{schedule.classroom.name}}</mat-card-subtitle>
         <mat-card-subtitle>Profesor:{{schedule.user.firstName+' '+schedule.user.lastName}}</mat-card-subtitle>
         <mat-card-subtitle>Tip de Ora:{{schedule.courseHourType.hourType.name}}</mat-card-subtitle>
-        <mat-card-subtitle>SemiGrupe:{{semiGroupsToString(schedule.semiGroups)}}</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="!schedule.courseHourType.hourType.needAllSemiGroups&&!schedule.courseHourType.course.isOptional">SemiGrupe:{{semiGroupsToString(schedule.semiGroups)}}</mat-card-subtitle>
       </mat-card-header>
 <!--      <mat-card-actions>-->
 <!--&lt;!&ndash;        <button (click)="openDialog(status)" mat-button>Editează</button>&ndash;&gt;-->
