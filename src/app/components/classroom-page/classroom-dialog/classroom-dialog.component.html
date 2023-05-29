@@ -19,6 +19,12 @@
       Field is required
     </mat-error>
   </ng-container>
+
+
+  <mat-form-field class="full-width" *ngIf="data">
+    <input formControlName="macAddress" matInput placeholder="MAC(trece 0 daca nu vrei)">
+  </mat-form-field>
+
 </form>
 <div mat-dialog-actions>
   <button (click)="onNoClick()" mat-button>Nu mersi</button>

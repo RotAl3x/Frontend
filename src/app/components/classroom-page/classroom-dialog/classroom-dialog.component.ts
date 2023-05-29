@@ -15,7 +15,8 @@ export class ClassroomDialogComponent implements OnInit {
   public form = this.formBuilder.group({
     id: ['ddf3c33a-7fa1-442d-9afc-7cac2edb8d3a'],
     name: ['', [Validators.required]],
-    daysOfWeek: [[''], [Validators.required]]
+    daysOfWeek: [[''], [Validators.required]],
+    macAddress: ['']
   })
   public readonly WeekDay = WeekDay;
 

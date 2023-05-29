@@ -7,6 +7,7 @@
         <mat-card-header>
           <mat-card-title>{{classroom.name}}</mat-card-title>
           <mat-card-subtitle>{{weekDaysArrayToString(classroom.daysOfWeek)}}</mat-card-subtitle>
+          <mat-card-subtitle>Are tabletă:{{classroom.macAddress!==null}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-actions>
           <button (click)="openDialog(classroom)" mat-button>Editează</button>
