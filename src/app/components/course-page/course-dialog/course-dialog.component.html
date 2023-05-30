@@ -1,7 +1,7 @@
 <form [formGroup]="form" class="forms" style="width: 100%">
   <mat-form-field appearance="fill">
     <mat-label>Program de studiu</mat-label>
-    <mat-select [compareWith]="compareFn" formControlName="studyProgramYearId">
+    <mat-select  formControlName="studyProgramYearId">
       <mat-option *ngFor="let study of studyPrograms" [value]="study.id">{{study.name}}</mat-option>
     </mat-select>
   </mat-form-field>
@@ -13,7 +13,7 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Profesor</mat-label>
-    <mat-select [compareWith]="compareFn" formControlName="professorUserId">
+    <mat-select formControlName="professorUserId">
       <mat-option *ngFor="let professor of professorUsers"
                   [value]="professor.id">{{professor.firstName + ' ' + professor.lastName}}</mat-option>
     </mat-select>
