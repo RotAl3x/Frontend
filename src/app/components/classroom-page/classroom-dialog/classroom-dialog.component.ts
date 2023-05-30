@@ -46,6 +46,7 @@ export class ClassroomDialogComponent implements OnInit {
       return;
     }
     try {
+      if(this.form.controls.macAddress.value=='') this.form.controls.macAddress.setValue(null);
       if (this.data) {
         await this.classroomService.update(this.form.value);
         this.snack.openSnackBar('Clasa a fost actualizată cu succes');
