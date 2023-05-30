@@ -4,7 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {LocalStorage} from "@ngx-pwa/local-storage";
 import {IAuthSession, IChangePassword, ILogin, IRegister, IRole, IUser} from "../models/login";
-import {firstValueFrom, map, tap} from "rxjs";
+import {delay, firstValueFrom, map, tap} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
